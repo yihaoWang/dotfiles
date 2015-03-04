@@ -1,0 +1,6 @@
+.gitignore
+*.swp
+db.php
+vendor/
+deploy.json
+deploy.txt
