@@ -1,0 +1,65 @@
+# vim: set ft=sh:
+alias ..='cd ..'
+alias ...='cd ../..'
+
+case $(uname -s) in
+Linux)
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias junipernc='junipernc -nojava'
+alias dquilt="quilt --quiltrc=${HOME}/.quiltrc-dpkg"
+;;
+Darwin|FreeBSD)
+alias ls="ls -GF"
+alias la="ls -AF"
+alias ll="ls -lF"
+alias vi="vim"
+#enables color in the terminal bash shell export
+export CLICOLOR=1
+#sets up the color scheme for list export
+export LSCOLORS="ExfxcxdxbxEgEdabagacad"
+;;
+esac
+
+alias j="jobs -l"
+alias h='history'
+alias phpunit='phpunit --colors'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias egrep='egrep --color=auto -d skip'
+alias egrpe='egrep --color=auto -d skip'
+alias fgrep='fgrep --color=auto -d skip'
+alias fgrpe='fgrep --color=auto -d skip'
+alias grep='grep --color=auto -d skip'
+alias grpe='grep --color=auto -d skip'
+alias tmux='tmux -2'
+alias bd=". bd -s"
+
+repeat()
+{
+    local rcount=$1
+
+    if [ $# -le 1 ] || [ -z "$rcount" ]; then
+        echo "usage: repeat <count> <command>" 1>&2
+        return 2
+    fi
+
+    shift
+
+    local acmd=("$@")
+
+    if [ $rcount -le 0 ]; then
+        echo "count must be greater than 0"
+        echo "usage: repeat <count> <command>" 1>&2
+        return 2
+    fi
+
+    st=0
+    while [ $rcount -gt 0 ]; do
+        eval "${acmd[@]}"
+        st=$?
+        rcount=$((rcount - 1))
+    done
+    return $st
+}
+# end repeat

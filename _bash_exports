@@ -1,0 +1,19 @@
+# vim: set ft=sh:
+
+type -P most &>/dev/null
+if [ $? == 0 ]; then
+	MOST=`which most`
+fi
+if [ -n "$MOST" ]; then export MANPAGER="$MOST -s"; fi
+
+export GREP_OPTIONS='--color=auto --exclude-dir=\.svn --exclude-dir=\.git --exclude=*\.swp'
+export LESS="-eFmrSwX"
+export FULLNAME="Yihao Wang"
+export EMAIL="zero5011@gmail.com"
+export HGUSER=$FULLNAME
+export DEBFULLNAME=$FULLNAME
+export DEBEMAIL=$EMAIL
+export EDITOR="vim"
+export HISTTIMEFORMAT="%F %T "
+export PATH="$HOME/bin:/usr/local/bin:$PATH"
+export LANG=zh_TW.UTF-8
