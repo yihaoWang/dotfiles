@@ -27,14 +27,15 @@
 	preloadindex = yes
 	editor = vim
 	pager = less -FSRX
-	excludesfile = /net/account/users/yihaowang/.gitignore_global
+	excludesfile = /Users/yihaowang/.gitignore_global
 
 [merge]
 	tool = vimdiff
 
 [user]
-	user = yihaowang
-	email = yihaowang@kkbox.com
+	user = Yihao Wang
+	email = yihao.wang@goanimate.com
+	name = yihaowang
 
 [i18n]
 	logOutputEncoding = UTF-8

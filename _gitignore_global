@@ -4,3 +4,9 @@ db.php
 vendor/
 deploy.json
 deploy.txt
+.gitreview
+.DS_Store
+.jscs.json
+.sql
+node_modules/
+yarn.lock
