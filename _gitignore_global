@@ -9,4 +9,10 @@ deploy.txt
 .jscs.json
 .sql
 node_modules/
+preview-servers.json
+preview-workers.json
+ffmpeg/
+shm/
 yarn.lock
+update-node-modules.sh
+ config/.credentials/

@@ -19,3 +19,5 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$PATH"
 fi
+
+export PATH=`yarn global bin`:$PATH
